@@ -1,0 +1,154 @@
+
+62. What is hierarchy of hashmap? Which interfaces does hashmap implement?
+Ans==>
+      As already said, HashMap extends AbstractMap class and implements Cloneable and Serializable interfaces. 
+      AbstractMap is an abstract class which provides skeletal implementation of Map interface. 
+      Below is the hierarchy structure of java.util.HashMap class.
+      
+      
+---------------------------------------------------------------------------------------------------------------------
+64. Which is underlying data structure implemented by hashmap.
+
+Ans==>
+     
+
+---------------------------------------------------------------------------------------------------------------------
+
+65. What is difference between hashtable and hashset
+Ans==>
+__________________________________________________________________________________________________________________
+                       HashSet                                         HashTable
+___________________________________________________________________________________________________________________
+                       
+ 1. HashSet allows NULL Elements                                1. HashTable does not allow NULL Elements.
+ 2. Objects that you insert in HashSet are not guaranteed       2. HashTable does not maintain insertion order.
+    to be inserted in the same order. Objects are inserted 
+    based on their hash code. LinkedHashSet can be used 
+    to maintain order.     
+ 3. HashSet is not Synchronized but it can be synchronized      3. HashTable is Synchronized.
+    externally.   
+ 4. add() method is used to insert into HashSet                 4. put() method is used to insert into HashTable   
+      
+---------------------------------------------------------------------------------------------------------------------
+
+66. Note how hashmap works internally in java.
+Ans==>
+
+     A HashMap provides a way to store and retrieve key-value pairs in a way that is efficient and fast. 
+     An internal HashMap is also known as an open addressing or closed hashing. HashMap is a specific 
+     implementation of a HashMap that stores the key-value pairs directly within an array. In an internal 
+     HashMap, the key-value pairs are stored in an array called a hash table. The array is indexed using 
+     a hash function that converts each key into an index in the array. When a new key-value pair is 
+     added to the HashMap, the key is hashed to determine its index in the array. If there is already a 
+     key stored at that index, HashMap uses a collision resolution strategy to find an empty index to 
+     store the new key-value pair
+      
+
+
+
+67. Study what is hashing.
+==>
+     Hashing is the process of transforming any given key or a string of characters into another value. 
+---------------------------------------------------------------------------------------------------------------------
+
+68. What is difference between hashset and hashmap. 
+Ans ==>
+___________________________________________________________________________________________________________________
+            	Hash Set                                         	       HashMap                                   
+___________________________________________________________________________________________________________________
+1. HashSet implements the Set interface                   1 HashMap implements the Map interface 
+2. No Duplicates are allowed                              2 Yes duplicates values are allowed but no duplicate key is allowed 
+3. Dummy values are allowed in HashSet.                   3 No Dummy values are allowed in HashMap.
+4. A single Object is required during an add operation    4 2 Objects are required during an add operation
+5. Speed is comparatively slower than HashMap             5 Speed is comparatively faster than HashSet because of hashing 
+                                                            technique has been used here.
+6. Have a single null value                               6 Single null key and any number of null values
+7. Add() method is used for the insertion                 7 The put () method is used for insertion.
+
+____________________________________________________________________________________________________________________
+
+
+69. What is difference between fail-fast and fail-safe iterators
+                     Fail-Fast	                                               Fail-Safe
+    1. ConcurrentModificationException is thrown while        1. No Exception is thrown
+       modifying the object during the iteration process.	
+
+    2. Fail-Fast needs less memory during the process.	      2. Fail-Safe iterator requires more memory during the process. 
+    
+    3. A clone Object is not created during the iteration     3. A clone Object or a Copy is created during the iteration process.
+       process.	
+       
+    4. Fail-Fast does not allow modification during the       4. Fail-Safe allows modification during the process of iteration.
+       process of iteration.	
+     
+    5. Fail-Fast is fast,	                                  5. Fail-Safe is slightly slower than fail fast. 
+      
+
+    Examples:                                                 Examples:
+
+    ArrayList, Vector, HashMap, HashSet, etc.                 ConcurrentHashMap, CopyOnWriteArrayList, etc.
+
+
+
+
+
+
+71. What is difference between enumerator and iterator.
+
+                      Iterator                                                  Enumeration
+ 
+   1. The iterator is a universal cursor as it is            1. Enumeration is not a universal cursor as it applies only 
+      applicable to all the collection classes.                 to legacy classes.
+      
+   2. The iterator has the remove() method.                  2. Enumeration does not have the remove() method.
+   
+   3. The iterator can do modifications (e.g using           3. The enumeration interface acts as a read-only interface,
+      the remove() method which removes the element             one can not do any modifications to the Collection
+      from the Collection during traversal).                    while traversing the elements of the Collection.
+      
+   4. Iterator is not a legacy interface. Iterator           4. Enumeration is a legacy interface that is used for
+      can be used for the traversal of HashMap,                 traversing Vector, and Hashtable.
+      LinkedList, ArrayList, HashSet, TreeMap, 
+      and TreeSet.   
+      
+
+82. Note differences in Hashmap, treemap, linkedhashmap and concurrenthashmap. 
+
+    HashMap:
+
+    It does not guarantee any specific order of elements.
+    It allows null values and one null key.
+    It is not synchronized, making it not thread-safe.
+    It is generally faster than TreeMap and LinkedHashMap for basic operations.
+    
+    Map<Integer, String> hashMap = new HashMap<>();
+    
+    
+    TreeMap:
+
+    It maintains the natural order of elements based on their keys or a specified comparator.
+    It does not allow null keys but can have null values.
+    It is not synchronized, making it not thread-safe.
+    It provides methods for navigation and range views.
+    
+    Map<Integer, String> treeMap = new TreeMap<>();
+    
+    
+    LinkedHashMap:
+
+    It maintains the order of elements in which they were inserted.
+    It allows null values and one null key.
+    It is not synchronized, making it not thread-safe.
+    It is slightly slower than HashMap due to maintaining the insertion order. 
+    
+    Map<Integer, String> linkedHashMap = new LinkedHashMap<>();
+    
+    
+    ConcurrentHashMap:
+
+    It is designed for concurrent operations, making it thread-safe without using external synchronization.
+    It does not allow null keys or values.
+    It is partitioned into segments to allow concurrent access to different segments.
+    It provides better performance in a concurrent environment compared to a synchronized HashMap.
+    
+    Map<Integer, String> concurrentHashMap = new ConcurrentHashMap<>();

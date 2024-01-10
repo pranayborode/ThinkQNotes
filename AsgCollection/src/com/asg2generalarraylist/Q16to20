@@ -1,0 +1,59 @@
+
+16.	Does ArrayList allow Null values
+Ans- ArrayList can have any number of null elements.
+
+public class MainClass
+{
+    public static void main(String[] args)
+    {
+        ArrayList<Integer> list = new ArrayList<>();
+ 
+        //Adding elements to ArrayList
+ 
+        list.add(100);
+ 
+        list.add(null);
+ 
+        list.add(2000);
+ 
+        list.add(null);
+ 
+        list.add(null);
+ 
+        //ArrayList having 3 null elements
+ 
+        System.out.println(list);     //Output : [100, null, 2000, null, null]
+    }
+}
+
+****************************************************************************************
+17.	What is the difference between ArrayListclear() and removeAll() methods?
+Ans - clear() method
+      Removes all of the elements from this list.The list will be empty after this call returns.
+      
+      removeAll() method
+      Removes from this list all of its elements that are contained in thespecified collection
+
+****************************************************************************************
+18.	What is the difference between ArrayList’s overloaded remove() methods?
+
+     Removes the element at the specified position in this list .
+     Shifts any subsequent elements to the left. 
+     Returns the element that was removed from the list.
+
+
+****************************************************************************************
+19.	If an ArrayList contains duplicate objects and remove() 
+    method is invoked on the same object, will it remove the duplicates?
+    
+    No, if an ArrayList contains duplicate objects and you use the remove() method 
+    on one occurrence of the object, it will only remove the first occurrence of that object. 
+****************************************************************************************
+20.	How to reverse an ArrayList in Java?
+
+   To reverse an ArrayList in Java, you can use the Collections.reverse() method 
+   from the java.util package. This method reverses the order of elements in the specified list.
+
+
+****************************************************************************************
+18.	How to prove ArrayList increases its internal space, prove by showing Java code?

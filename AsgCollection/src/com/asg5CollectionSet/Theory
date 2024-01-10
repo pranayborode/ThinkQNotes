@@ -1,0 +1,53 @@
+
+46. Which is underlying data structure for hashset.?
+Ans==>
+      The underlying data structure for HashSet is Hashtable.
+      As it implements the Set Interface, duplicate values are not allowed.
+      Objects that you insert in HashSet are not guaranteed to be inserted in the same order. 
+      
+---------------------------------------------------------------------------------------------------------------------
+
+48. What is default capacity of hashset
+Ans==>
+      This constructor is used to build an empty HashSet object in which the default 
+      initial capacity is 16 and the default load factor is 0.75. If we wish to create 
+      an empty HashSet with the name hs, then, it can be created as:
+
+      HashSet<E> hs = new HashSet<E>();
+
+---------------------------------------------------------------------------------------------------------------------
+
+49. What is default fill ratio of hashset.
+Ans==>
+      The initial default capacity of HashSet is 16, and the load factor (fill ratio) is 0.75, 
+      meaning the size of HashSet increases when it is filled by 75%.
+      
+---------------------------------------------------------------------------------------------------------------------
+
+50. What is fill ratio
+Ans==>
+      Fill ratio measures the number of successfully filled orders as a fraction of the total 
+      number of orders placed, normally stated as a percentage.
+
+---------------------------------------------------------------------------------------------------------------------
+
+58. What is difference between hashset and treeset
+Ans ==>
+___________________________________________________________________________________________________________________
+            	Hash Set                           |           	        Tree Set                                   |
+___________________________________________________________________________________________________________________
+                                                   |
+1	Hash set operates using a HashTable.           |    1	Tree set operates using a tree structure.
+2	It does not permit heterogeneous objects.      |    2	It permits heterogeneous objects.
+3	It allows null objects.                        |    3	It does not allow null objects.
+4	Objects are compared using the equals method.  |    4   Objects are compared using the compare method.
+5	It does not support ordering.	               |    5   TreeSet supports objects in sorted order.
+                                                   |
+____________________________________________________________________________________________________________________
+
+
+
+
+
+
+      

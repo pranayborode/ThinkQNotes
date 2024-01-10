@@ -1,0 +1,447 @@
+
+
+//17. What is difference between array and arraylist.
+
+Arrays and ArrayLists are both used to store elements in Java, but they have some key differences:
+
+Type of Elements:
+
+Array: An array in Java can store elements of the same data type. Once you declare the type of elements 
+       an array will hold, you cannot change it.
+
+ArrayList: An ArrayList can store elements of different data types. 
+           It is part of the Java Collections Framework and can dynamically resize itself.
+           
+**************************************************************************************************************           
+Size:
+
+Array: Arrays in Java have a fixed size, which means you need to declare the size 
+       when you create an array, and it cannot be changed afterward.
+ArrayList: ArrayLists can dynamically resize themselves. 
+           You can add or remove elements from an ArrayList without specifying its size. 
+           The size of an ArrayList is dynamic and can grow or shrink as needed.
+           
+                      
+**************************************************************************************************************
+           
+Mutability:
+
+Array: Once an array is created, its size and elements cannot be changed.
+ArrayList: ArrayLists are mutable. You can add, remove, or modify elements at any point.
+
+           
+**************************************************************************************************************
+Performance:
+
+Array: Arrays generally have better performance when it comes to direct element access. 
+       They use contiguous memory locations, making access faster.
+ArrayList: ArrayLists have some overhead due to their dynamic resizing and additional methods. 
+           In scenarios where frequent modifications to the size of the collection are required, 
+           an ArrayList might be more convenient despite a slight performance overhead.
+
+           
+**************************************************************************************************************
+Usage of Generics:
+
+Array: Arrays can use generics, but the syntax is different. For example, Integer[] intArray is an array of integers.
+ArrayList: ArrayLists use generics in a straightforward manner, allowing you to 
+           specify the type of elements they will contain, like ArrayList<Integer>.
+
+           
+**************************************************************************************************************
+API and Methods:
+
+Array: Arrays have a limited set of methods provided by the Java language, and their functionality is quite basic.
+ArrayList: ArrayLists provide a rich set of methods and operations, including dynamic resizing, sorting, searching, 
+           and more, thanks to the Java Collections Framework.
+
+
+In summary, arrays are a basic and fixed-size data structure, while ArrayLists provide more flexibility, 
+dynamic resizing, and a richer set of methods for handling collections of objects. 
+The choice between them depends on the specific requirements of your program.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+21. Which is root interface of collection framework.
+
+The root interface of the Java Collections Framework is the Collection interface. 
+The Collection interface is at the top of the hierarchy for the entire collections framework.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+22. What is difference between clear and removeall methods
+
+clear Method:
+
+Purpose: The clear method is used to remove all elements from a collection, making it empty.
+Applicability: It is applicable to any class that implements the Collection interface.
+Usage Example:
+
+List<String> myList = new ArrayList<>();
+myList.add("Apple");
+myList.add("Banana");
+myList.clear(); // Removes all elements, myList is now empty
+
+---------------------------------------------------------------------------
+removeAll Method:
+
+Purpose: The removeAll method is used to remove all elements from a collection that are also present in another collection.
+Applicability: It is applicable to classes that implement the Collection interface, such as Lists, Sets, etc.
+Usage Example:
+
+List<String> list1 = new ArrayList<>(Arrays.asList("Apple", "Banana", "Orange"));
+List<String> list2 = new ArrayList<>(Arrays.asList("Banana", "Orange"));
+list1.removeAll(list2); // Removes all elements from list1 that are also present in list2
+
+The clear method removes all elements from a single collection, making it empty.
+The removeAll method removes from one collection all elements that are also present in another collection.
+It's important to note that while clear is a direct method of the Collection interface, removeAll is a method 
+of the Collection interface that takes another collection as an argument. The behavior of removeAll depends 
+on the type of collection (e.g., List, Set). For example, in a List, the order of elements matters, 
+while in a Set, it does not.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+23. Which interfaces are implemented by arraylist class.
+
+The ArrayList class in Java implements the following interfaces:
+
+Serializable Interface:
+
+ArrayList implements the Serializable interface, which means instances of ArrayList can be serialized 
+to be saved in a file or sent over a network.
+
+
+Cloneable Interface:
+
+ArrayList implements the Cloneable interface, indicating that it supports being cloned using the clone() method. 
+However, note that the clone() method in ArrayList creates a shallow copy of the list.
+
+
+Iterable Interface:
+
+ArrayList implements the Iterable interface, allowing it to be used in enhanced for loops. 
+The Iterable interface provides an iterator for iterating over the elements.
+
+
+Collection Interface:
+
+ArrayList implements the Collection interface, which is the root interface of the Java Collections Framework. 
+This interface provides a standard way to interact with collections of objects, including methods for 
+adding, removing, and querying elements.
+
+
+List Interface:
+
+ArrayList implements the List interface, which extends the Collection interface. 
+The List interface represents an ordered collection (sequence) that allows duplicate elements. 
+It provides additional methods to access elements by index, manipulate sublists, and more.
+
+
+RandomAccess Interface:
+
+ArrayList implements the RandomAccess interface, indicating that it supports fast, random access to its elements.
+ This interface is a marker interface and does not define any methods.
+ 
+ 
+ 
+In summary, ArrayList implements Serializable, Cloneable, Iterable, Collection, List, and 
+RandomAccess interfaces, providing a wide range of functionalities for working with ordered lists of elements.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+24. What is difference between collection and collections. Give examples of 2 methods in each of them.
+==>
+
+Collection:
+
+Concept: The term "Collection" refers to a generic interface in the Java Collections Framework. 
+The Collection interface is the root interface for the entire framework and defines a standard 
+set of methods for interacting with collections of objects.
+
+Example Methods:
+add(E e): Adds the specified element to the collection.
+size(): Returns the number of elements in the collection.
+
+// Example using Collection interface
+Collection<String> myCollection = new ArrayList<>();
+myCollection.add("Apple");
+myCollection.add("Banana");
+int size = myCollection.size(); // Returns the number of elements (2)
+
+
+Collections:
+
+Class: The term "Collections" (with an "s") refers to a utility class in the java.util package. 
+The Collections class provides static methods for working with collections, such as sorting, 
+shuffling, and creating unmodifiable collections.
+
+Example Methods:
+sort(List<T> list): Sorts the specified list into ascending order.
+unmodifiableList(List<? extends T> list): Returns an unmodifiable view of the specified list.
+
+// Example using Collections class
+List<String> myList = new ArrayList<>(List.of("Orange", "Apple", "Banana"));
+Collections.sort(myList); // Sorts the list in ascending order
+List<String> unmodifiableList = Collections.unmodifiableList(myList); // Creates an unmodifiable view
+
+Collection is an interface in the Java Collections Framework, and instances of classes that implement 
+this interface represent collections of objects.
+Collections is a utility class that provides static methods for working with collections, 
+often by taking a collection as an argument and performing some operation on it.
+Note: While Collection is an interface, Collections is a class with static utility methods. 
+Their names are similar but refer to distinct concepts in Java.
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+25. Which is formula to calculate new capacity of arraylist.
+==>
+
+The formula to calculate the new capacity of an ArrayList in Java is as follows:
+newCapacity = oldCapacity + (oldCapacity >> 1)
+
+In this formula:
+
+oldCapacity is the current capacity of the ArrayList.
+>> is the right shift operator, which effectively divides oldCapacity by 2, rounding down to the nearest integer.
+The purpose of this formula is to increase the capacity of the ArrayList when it needs to be resized. 
+When elements are added to an ArrayList, and the current size exceeds the current capacity, 
+the ArrayList needs to be resized to accommodate more elements. The formula ensures that the new capacity 
+is increased by 50% (approximately) each time a resize is needed.
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+26. What is default capacity of arraylist.
+==>
+
+The default capacity of an ArrayList in Java is 10. When you create an ArrayList 
+without specifying an initial capacity, it is initialized with a default capacity of 10.
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+27. State the difference between arraylist and vector
+
+ArrayList
+1. No method is synchronized 
+2. At a time multiple Threads are allow to operate on ArrayList object and hence
+   ArrayList object is not Thread safe.
+3. Relatively performance is high because Thread are not required to wait.
+4. ArrayList is worst choice in insertion and deletion in middel.
+5. It is non legacy and introduced in 1.2v
+
+Vector
+1. Every method is synchronized 
+2. At a time only one Thread is allow to operate on Vector object
+   and hence Vector object is Thread safe.
+3. RElatively performance is low because Threads are required to wait.
+4. Vector is Best choice in insertion and deletion in middel.
+5. It is legacy and introduced in 1.0v   
+    
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+29. State difference between comparable and comparator interface.
+
+Both the Comparable and Comparator interfaces in Java are used for sorting objects, 
+but they differ in their approach and usage:
+
+Comparable Interface:
+
+Location: The Comparable interface is part of the object itself, meaning the class of the 
+          objects being compared implements the Comparable interface.
+
+Method: It defines a single method called compareTo(Object obj) that compares 
+        the current object with the specified object for ordering. 
+        The method returns a negative integer, zero, or a positive integer 
+        if the current object is less than, equal to, or greater than the specified object, respectively.
+        
+Usage: Objects that implement Comparable can be sorted automatically by methods like Collections.sort() or Arrays.sort().
+
+public class ComparableExample implements Comparable<ComparableExample> {
+    private int value;
+
+    public ComparableExample(int value) {
+        this.value = value;
+    }
+
+    @Override
+    public int compareTo(ComparableExample other) {
+        return Integer.compare(this.value, other.value);
+    }
+
+    // Other methods and fields
+}
+
+
+----------------------------------------------------------------------------------------------
+
+Comparator Interface:
+
+Location: The Comparator interface is external to the objects being compared. 
+          It's a separate class or lambda expression that provides a comparison strategy for a class.
+          
+Method: It defines a method called compare(T o1, T o2) that compares two objects for ordering. 
+        The method returns a negative integer, zero, or a positive integer 
+        if the first object is less than, equal to, or greater than the second object, respectively.
+        
+Usage: Objects can be sorted using a specific comparator, providing flexibility for multiple sorting 
+       criteria or when the class being compared doesn't implement Comparable.
+
+import java.util.Comparator;
+
+public class ComparatorExample {
+    private int value;
+
+    public ComparatorExample(int value) {
+        this.value = value;
+    }
+
+    // Other methods and fields
+
+    public static Comparator<ComparatorExample> compareByValue = Comparator
+            .comparingInt(ComparatorExample::getValue);
+
+    public int getValue() {
+        return value;
+    }
+}
+       
+In summary:
+
+The Comparable interface is used for natural ordering and is implemented 
+by the class of the objects being compared.
+
+The Comparator interface is used for custom ordering and is a separate class 
+or expression that compares objects external to their class.
+
+When using Comparable, the comparison logic is embedded in the class being compared.
+
+When using Comparator, the comparison logic is provided externally, 
+allowing for different comparison strategies.
+
+Classes implementing Comparable can be sorted automatically,
+while Comparator allows more flexibility in sorting strategies.
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+30. What is difference between Fail Safe and Fail Fast. Show example of each.
+
+
+Fail-Safe and Fail-Fast are two different approaches to handling concurrent modifications in collections in Java.
+
+Fail-Safe:
+
+Definition: In a fail-safe approach, modifications to a collection are allowed during iteration, 
+            and they do not throw ConcurrentModificationException.
+            
+Behavior: It does not directly operate on the original collection but operates on a clone or a copy 
+           of the collection, ensuring that the original collection remains unaffected by modifications during iteration.
+           
+Use Case: Fail-safe iterators are typically used in scenarios where it's more important to have a consistent 
+          view of the data, even if it might not be the most up-to-date view.
+          
+import java.util.Iterator;
+import java.util.concurrent.ConcurrentHashMap;
+
+public class FailSafeExample {
+    public static void main(String[] args) {
+        ConcurrentHashMap<String, String> map = new ConcurrentHashMap<>();
+        map.put("A", "Apple");
+        map.put("B", "Banana");
+
+        Iterator<String> iterator = map.keySet().iterator();
+
+        while (iterator.hasNext()) {
+            String key = iterator.next();
+            System.out.println(key + ": " + map.get(key));
+
+            // This modification is allowed in a fail-safe iterator
+            map.put("C", "Cherry");
+        }
+    }
+}
+  
+  ------------------------------------------------------------------------------------
+  
+  Fail-Fast:
+
+Definition: In a fail-fast approach, any attempt to modify the collection 
+            while it is being iterated results in the immediate throwing of a ConcurrentModificationException.
+            
+Behavior: It detects and throws an exception if the collection is modified directly during iteration.
+
+Use Case: Fail-fast iterators are used when it's critical to detect unexpected concurrent 
+          modifications and prevent further iterations based on the original state of the collection.    
+          
+          import java.util.ArrayList;
+import java.util.Iterator;
+
+public class FailFastExample {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("One");
+        list.add("Two");
+
+        Iterator<String> iterator = list.iterator();
+
+        while (iterator.hasNext()) {
+            String element = iterator.next();
+            System.out.println(element);
+
+            // This modification will result in ConcurrentModificationException
+            list.add("Three");
+        }
+    }
+}
+          
+n summary:
+
+Fail-Safe iterators allow modifications during iteration and operate on a copy of the collection.
+
+Fail-Fast iterators throw ConcurrentModificationException if there are direct modifications 
+          to the collection during iteration, providing an immediate indication of concurrent modifications.
+          
+          
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 31. What will happen if compare method returns only +1. Show example.
+ 
+ If the compare method in a comparator returns a positive integer (+1), 
+ it indicates that the first object being compared is greater than the second object. 
+ This implies that, in the sorted order, the first object should come after the second object.
+
+ 32. What will happen if compare method always returns -1. Show example
+
+If the compare method in a comparator always returns -1, it indicates that the first object 
+being compared is considered smaller than the second object. In the sorted order, 
+the first object should come before the second object.
+              
+ 33. What will happen if compare method always returns 0; Show example.
+               
+ If the compare method in a comparator always returns 0, it indicates that the two objects 
+ being compared are considered equal in terms of the sorting criteria. In the sorted order, 
+ their positions relative to each other may not change, and they are treated as equivalent.         
+ 
+ 
+ public class SalaryNameComparator implements Comparator<Q28Employee>{
+
+	@Override
+	public int compare(Q28Employee e1, Q28Employee e2) {
+		
+		if(e1.getSalary() == e2.getSalary()) {
+			return e2.getName().compareTo(e1.getName());
+		}else if (e1.getSalary()>e2.getSalary()) {
+			return 1;
+		}	
+		return -1;
+	}
+}    
+
+          
+          
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
