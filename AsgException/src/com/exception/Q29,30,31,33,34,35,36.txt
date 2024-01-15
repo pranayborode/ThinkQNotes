@@ -1,0 +1,45 @@
+29. What is Exception Handling? 
+Ans-Exception Handling is a mechanism to handle runtime errors 
+    such as ClassNotFoundException, IOException, SQLException, RemoteException, etc.
+
+30. What is difference between Checked Exception and Unchecked  
+Ans-1) Checked Exception
+       The classes which directly inherit Throwable class except RuntimeException and 
+       Error are known as checked exceptions e.g. IOException, SQLException etc. 
+       Checked exceptions are checked at compile-time.
+       
+    2) Unchecked Exception
+       The classes which inherit RuntimeException are known as unchecked exceptions 
+       e.g. ArithmeticException, NullPointerException, ArrayIndexOutOfBoundsException etc. 
+       Unchecked exceptions are not checked at compile-time, but they are checked at runtime.
+
+31. What is the base class for Error and Exception? 
+Ans-In Java, the base class for both Error and Exception classes is Throwable. 
+    The Throwable class is at the top of the exception hierarchy
+    
+33. Is it necessary that each try block must be followed by a catch  
+Ans-“No, it is not mandatory that each try block must be followed by a catch block in Java.” 
+     After try block, we can use either “catch” block or “finally” block. 
+     
+
+34. What is finally block?  
+Ans- used to put important codes such as clean up code 
+     e.g. closing the file or closing the connection. 
+     The finally block executes whether exception rise or not and whether exception handled or not.
+
+35. Can finally block be used without catch? 
+Ans-Yes, it is not mandatory to use catch block with finally.
+
+36. What is difference between throw and throws?
+Ans-
+     Throw 
+     1.throw is a keyword in Java which is used to throw an exception manually.
+     2.Using throw keyword, you can throw an exception from any method or block. 
+       But, that exception must be of type java.lang.Throwable class or it’s sub classes.
+
+     Throws
+     1.throws is also a keyword in java which is used in the method signature 
+       to indicate that this method may throw mentioned exceptions.
+     2.The caller to such methods must handle the mentioned exceptions either 
+       using try-catch blocks or using throws keyword.  
+       
