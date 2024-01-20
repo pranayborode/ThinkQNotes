@@ -45,8 +45,8 @@ public class ItselfReverse {
 		int arr[] = { 3, 90, 45, 29, 37, 78 };
 		System.out.println(Arrays.toString(arr));
 
-//		System.out.println("using temporary array");
-//		findReverseArray1(arr);
+		System.out.println("using temporary array");
+		findReverseArray1(arr);
 		
 		System.out.println("\nwithout using temporary array");
         findReverseArray2(arr);
