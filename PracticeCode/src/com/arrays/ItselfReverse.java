@@ -35,7 +35,7 @@ public class ItselfReverse {
 			}
 		}
 		for (int j = 0; j < revArr.length; j++) {
-			System.out.print(revArr[j] + "  ");
+			System.out.print(revArr[j] + " ");
 		}
 	}
 
