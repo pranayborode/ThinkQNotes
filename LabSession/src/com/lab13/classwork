@@ -1,0 +1,26 @@
+1.What is method overriding in java ?
+Ans - If a subclass provides the specific implementation of the method that has been 
+      declared by one of its parent class, it is known as method overriding.
+
+2.what are rules for method overriding in java ?
+Ans - 1.Method name must be same as name in parent method.
+      2.Method signature must me same.
+      3.we can't reduce the visibility. It should be same as parent class or higher
+      4.There must be IS-A relation
+     
+
+3. what is co-varient ?
+
+
+
+4. what is final keyword in java? when to use it?
+Ans - final keyword is a modifier which can be apply to class , method and variable.
+      1. final - variable : if we declare variable as a final then values can't be changed once it has been assign
+      
+      2. final - method : if we declare method as a final then that method cannot be overridden by subclasses
+                          Subclasses can still inherit and use the method, but they cannot provide a different implementation.
+      3. final - class  : if we declare class as a final then it cannot have any subclasses.                    
+      
+5. How to avoid inheritance in java ?
+Ans - by declaring a class as final, you prevent it from being extended by other classes.
+
